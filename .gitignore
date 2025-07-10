@@ -1,50 +1,23 @@
-# Maven target directory
-/target/
-
-# Eclipse files
-.project
-.classpath
-.settings/
-
-# IntelliJ IDEA files
-.idea/
-*.iml
-*.iws
-
 # Logs
 logs/
 *.log
 
-# Screenshots folder (adjust if your screenshots are saved elsewhere)
-screenshots/
-*.png
-*.jpg
-*.jpeg
+# IDE metadata
+.classpath
+.project
+.settings/
 
-# TestNG reports or output
+# Build output
+target/
+
+# Test results
+allure-results/
 test-output/
 
-# Temporary files
-*.tmp
-*.temp
+# Screenshots or runtime captures
+screenshots/
+*.png
 
-# OS files
+# OS junk files
 .DS_Store
 Thumbs.db
-
-# Others
-*.bak
-*.swp
-*.swo
-
-# Node modules (if any node stuff involved)
-node_modules/
-
-# Ignore logs and screenshots
-logs/
-*.log
-screenshots/
-target/
-.idea/
-*.iml
-.DS_Store
