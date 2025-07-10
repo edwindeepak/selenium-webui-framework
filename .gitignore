@@ -39,3 +39,12 @@ Thumbs.db
 
 # Node modules (if any node stuff involved)
 node_modules/
+
+# Ignore logs and screenshots
+logs/
+*.log
+screenshots/
+target/
+.idea/
+*.iml
+.DS_Store
