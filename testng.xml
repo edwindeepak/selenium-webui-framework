@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="UI Test Suite" verbose="1" parallel="false" thread-count="1">
+
+  <listeners>
+    <listener class-name="com.edwindpk.automation.listeners.TestListener" />
+    <listener class-name="com.edwindpk.automation.listeners.RetryTransformer"/>
+  </listeners>
+
+  <test name="Login Tests">
+    <classes>
+      <class name="com.edwindpk.automation.tests.LoginTest" />
+    </classes>
+  </test>
+
+</suite>
