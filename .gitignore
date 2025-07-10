@@ -1,23 +1,36 @@
+# Ignore build output folders
+target/
+test-output/
+allure-results/
+
 # Logs
 logs/
 *.log
 
-# IDE metadata
+# Screenshots (if you save them locally)
+screenshots/
+
+# Eclipse IDE files
 .classpath
 .project
 .settings/
 
-# Build output
-target/
+# Maven local repository folder (optional, usually outside project)
+# .m2/
 
-# Test results
-allure-results/
-test-output/
-
-# Screenshots or runtime captures
-screenshots/
-*.png
-
-# OS junk files
+# OS generated files
 .DS_Store
 Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# IntelliJ IDEA files (if ever used)
+.idea/
+*.iml
+
+# Others
+*.log
