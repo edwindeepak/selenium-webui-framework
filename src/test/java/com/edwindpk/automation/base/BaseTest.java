@@ -10,22 +10,29 @@ import org.apache.logging.log4j.Logger;
 
 public class BaseTest {
 
-    protected WebDriver driver;  // Accessible in subclasses like LoginTest
+    protected WebDriver driver;  // Accessible to test classes
     private static final Logger log = LoggerUtils.getLogger(BaseTest.class);
 
     @BeforeMethod
     @Parameters("browser")
     public void setUp(@Optional("chrome") String browser) {
-        log.info("========== Test Started ==========");
-        DriverManager.initDriver(browser);  // Pass browser param here
+        long threadId = Thread.currentThread().getId();
+        log.info("========== [Thread-{}] Test Started ==========", threadId);
+        log.info("[Thread-{}] Requested Browser: {}", threadId, browser);
+
+        DriverManager.initDriver(browser);
         driver = DriverManager.getDriver();
-        log.info("Driver initialized and navigated to base URL.");
+
+        log.info("[Thread-{}] Driver initialized and navigated to base URL", threadId);
     }
 
     @AfterMethod
     public void tearDown() {
-        log.info("Tearing down the test and quitting driver.");
+        long threadId = Thread.currentThread().getId();
+        log.info("[Thread-{}] Tearing down the test and quitting driver", threadId);
+
         DriverManager.quitDriver();
-        log.info("========== Test Finished ==========\n");
+
+        log.info("========== [Thread-{}] Test Finished ==========\n", threadId);
     }
 }

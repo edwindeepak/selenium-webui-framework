@@ -8,9 +8,15 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.edwindpk.automation.config.ConfigReader;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.time.Duration;
 
 public class LoginPage {
+
+    private static final Logger logger = LogManager.getLogger(LoginPage.class); // ✅ Logger added
 
     private WebDriver driver;
     private WebDriverWait wait;
@@ -31,6 +37,12 @@ public class LoginPage {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);
+    }
+
+    public void navigateToLoginPage() {
+        String url = ConfigReader.getBaseUrl() + "/login";
+        driver.get(url);
+        logger.info("🔹 Navigated to Login page: {}", url); // ✅ Logging navigation
     }
 
     public void login(String username, String password) {
