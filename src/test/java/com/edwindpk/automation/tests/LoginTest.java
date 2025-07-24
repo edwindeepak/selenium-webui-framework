@@ -61,6 +61,6 @@ public class LoginTest extends BaseTest {
 
         // Verify logout button
         Assert.assertTrue(securePage.isLogoutButtonVisible(), "❌ Logout button not visible!");
-        logger.info("✅ Logout button is visible. Login test passed.");
+        logger.info("✅ Logout button is visible. Login test passed!");
     }
 }
